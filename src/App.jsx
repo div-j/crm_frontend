@@ -1,19 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router';
+import {  Route, Routes } from 'react-router';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import { AuthProvider } from './context/AuthContext';
-import { UserProvider } from './context/UserContext';
+
 import ProtectedRoute from './components/ProtectedRoute';
 import Help from './components/Help';
 
 export default function App() {
   return (
     <div data-theme="autumn">
-      <Router>
-        <AuthProvider>
-          <UserProvider>
+  
             <div >
               <div className="">
                 <Routes>
@@ -36,9 +33,7 @@ export default function App() {
                 </Routes>
               </div>
             </div>
-          </UserProvider>
-        </AuthProvider>
-      </Router>
-    </div>
+          </div>
+
   );
 }

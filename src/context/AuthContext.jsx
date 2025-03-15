@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUserData = async (token) => {
     try {
-      const response = await axios.get('https://crm-backend-oytv.onrender.com/api/users/me/', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/me/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('https://crm-backend-oytv.onrender.com/api/login/', { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/login/`, { email, password });
       localStorage.setItem('token', response.data.access);
       fetchUserData(response.data.access);
       toast.success('Logged in successfully');
@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (email, password, name, company, phoneNumber, country) => {
     try {
-      await axios.post("https://crm-backend-oytv.onrender.com/api/users/", {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/users/`, {
         email,
         password,
         name,

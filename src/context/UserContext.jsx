@@ -9,7 +9,6 @@ export const UserProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [statistics, setStatistics] = useState({});
   const [loading, setLoading] = useState(true);
-  console.log(user);
   
 
   useEffect(() => {
@@ -21,7 +20,7 @@ export const UserProvider = ({ children }) => {
 
   const fetchUsers = async (page = 1) => {
     try {
-      const response = await axios.get(`https://crm-backend-oytv.onrender.com/api/users?page=${page}`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users?page=${page}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -35,12 +34,11 @@ export const UserProvider = ({ children }) => {
 
   const fetchStatistics = async () => {
     try {
-      const response = await axios.get('https://crm-backend-oytv.onrender.com/api/users/statistics', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/statistics`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
       });
-      console.log(response.data);
       
       setStatistics(response.data);
     } catch (error) {

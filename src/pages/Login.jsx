@@ -1,15 +1,18 @@
 import { useState, useContext } from "react";
 import { AiOutlineMail, AiOutlineLock } from "react-icons/ai";
 import AuthContext from "../context/AuthContext";
+import { useNavigate } from "react-router";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     login(email, password);
+    navigate("/");
   };
 
   return (
