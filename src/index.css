@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: ['dark', 'light', 'cupcake'];
+}
+
+@theme {
+  --color-bg: #f8f9fd;
+  --color-sidebar-bg: #1f2937;
+  --color-sidebar-text: #ffffff;
+  --color-primary: #6c5ce7;
+  --color-secondary: #a29bfe;
+  --color-accent: #fd79a8;
+  --color-success: #00b894;
+  --color-warning: #fdcb6e;
+  --color-danger: #d63031;
+  --color-info: #0984e3;
+  --color-light: #dfe6e9;
+  --color-dark: #2d3436;
+}
+
+
+
+body{
+  @apply bg-bg ;
+}
