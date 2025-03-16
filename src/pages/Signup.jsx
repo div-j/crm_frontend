@@ -20,7 +20,7 @@ export default function Signup() {
     <section className="flex justify-between items-center h-screen">
       <div className="hidden sm:block w-[60%]">
         <img
-          src="/assets/signup_background.png"
+          src="/assets/login_background.png"
           alt="signup"
           className="w-full"
         />

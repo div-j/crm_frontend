@@ -68,7 +68,7 @@ export default function Login() {
           <p className="text-xs">OR</p>
           <hr className="w-full" />
         </section>
-        <button className="btn border-[#1E2772] text-[#1E2772] p-2 px-4 rounded-md w-full">
+        <button onClick={()=>navigate('/signup')} className="btn border-[#1E2772] text-[#1E2772] p-2 px-4 rounded-md w-full">
           Signup now
         </button>
       </div>
